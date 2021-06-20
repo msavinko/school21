@@ -1,0 +1,5 @@
+Credentials cache: API:15892
+        Principal: marlean@MSK.21-SCHOOL.RU
+
+  Issued                Expires               Principal
+Jun  7 14:42:20 2021  Jun  8 00:42:12 2021  krbtgt/MSK.21-SCHOOL.RU@MSK.21-SCHOOL.RU
