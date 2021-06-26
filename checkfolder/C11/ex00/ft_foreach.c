@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marlean <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 21:04:22 by marlean           #+#    #+#             */
-/*   Updated: 2021/06/26 21:00:43 by marlean          ###   ########.fr       */
+/*   Created: 2021/06/22 11:16:30 by marlean           #+#    #+#             */
+/*   Updated: 2021/06/22 17:51:04 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int n)
+void	ft_foreach(int *tab, int length, void(*f)(int))
 {
-	if (n >= 0)
+	int	i;
+
+	i = 0;
+	while (i < length)
 	{
-		write(1, "P", 1);
-	}
-	else
-	{
-		write(1, "N", 1);
+		f(tab[i]);
+		i++;
 	}
 }

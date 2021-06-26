@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marlean <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 21:04:22 by marlean           #+#    #+#             */
-/*   Updated: 2021/06/26 21:00:43 by marlean          ###   ########.fr       */
+/*   Created: 2021/06/22 19:53:07 by marlean           #+#    #+#             */
+/*   Updated: 2021/06/23 13:32:49 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void	ft_is_negative(int n)
+int	ft_count_if(char **tab, int length, int(*f)(char*))
 {
-	if (n >= 0)
+	int	i;
+	int	k;
+
+	i = 0;
+	k = 0;
+	while (i < length)
 	{
-		write(1, "P", 1);
+		if (f(tab[i]) != 0)
+			k++;
+		i++;
 	}
-	else
-	{
-		write(1, "N", 1);
-	}
+	return (k);
 }

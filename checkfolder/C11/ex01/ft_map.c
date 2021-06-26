@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marlean <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 21:04:22 by marlean           #+#    #+#             */
-/*   Updated: 2021/06/26 21:00:43 by marlean          ###   ########.fr       */
+/*   Created: 2021/06/22 18:23:51 by marlean           #+#    #+#             */
+/*   Updated: 2021/06/22 18:55:13 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_is_negative(int n)
+int *ft_map(int *tab, int length, int(*f)(int))
 {
-	if (n >= 0)
+	int	i;
+	int	*ptr;
+
+	i = 0;
+	ptr = (int *)malloc(length * sizeof(int));
+	while (i < length)
 	{
-		write(1, "P", 1);
+		ptr[i] = f(tab[i]);
+		i++;
 	}
-	else
-	{
-		write(1, "N", 1);
-	}
+	return (ptr);
 }

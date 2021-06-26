@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marlean <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 21:04:22 by marlean           #+#    #+#             */
-/*   Updated: 2021/06/26 21:00:43 by marlean          ###   ########.fr       */
+/*   Created: 2021/06/23 15:14:52 by marlean           #+#    #+#             */
+/*   Updated: 2021/06/24 14:53:13 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int n)
+int ft_is_sort(int *tab, int length, int(*f)(int, int))
 {
-	if (n >= 0)
+	int	i;
+	int	sort;
+	int revsort;
+
+	i = 0;
+	sort = 1;
+	revsort = 1;
+	while (i < (length - 1))
 	{
-		write(1, "P", 1);
+		if (f(tab[i], tab[i + 1]) < 0)
+			sort++;
+		if (f(tab[i], tab[i + 1]) > 0)
+			revsort++;
+		if (f(tab[i], tab[i + 1]) == 0)
+		{
+			sort++;
+			revsort++;
+		}
+		i++;
 	}
+	if ((sort == length) || (revsort == length))
+		return (1);
 	else
-	{
-		write(1, "N", 1);
-	}
+		return (0);
 }

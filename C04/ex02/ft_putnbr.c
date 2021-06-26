@@ -6,7 +6,7 @@
 /*   By: marlean <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:55:27 by marlean           #+#    #+#             */
-/*   Updated: 2021/06/14 19:44:21 by marlean          ###   ########.fr       */
+/*   Updated: 2021/06/26 21:03:06 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {		
-	if (nb == -2147483648)
+	if (nb == MIN)
 		write (1, "-2147483648", 11);
-	if (nb < MAX && nb > MIN)
+	if (nb <= MAX && nb > MIN)
 	{
 		if (nb < 0)
 		{

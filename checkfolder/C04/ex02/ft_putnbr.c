@@ -6,13 +6,13 @@
 /*   By: marlean <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:55:27 by marlean           #+#    #+#             */
-/*   Updated: 2021/06/14 17:45:08 by marlean          ###   ########.fr       */
+/*   Updated: 2021/06/26 21:03:06 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #define MAX 2147483647
-#define MIN -2147483647
+#define MIN -2147483648
 
 void	ft_putchar(char c)
 {
@@ -20,8 +20,10 @@ void	ft_putchar(char c)
 }
 
 void	ft_putnbr(int nb)
-{
-	if (nb < MAX && nb > MIN)
+{		
+	if (nb == MIN)
+		write (1, "-2147483648", 11);
+	if (nb <= MAX && nb > MIN)
 	{
 		if (nb < 0)
 		{
